@@ -1,4 +1,5 @@
 <?php
+echo("<br> <h2>Ejercicio 4. Incrementar</h2>");
 function incrementar(&$a){
     $a = $a+1;
 }

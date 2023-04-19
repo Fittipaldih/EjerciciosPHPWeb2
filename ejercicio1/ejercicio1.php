@@ -1,5 +1,7 @@
 <?php
+echo("<h2>Ejercicio 1. Semaforo</h2>");
 // A: IF ELSE y con RETURN
+
 function semaforo_a($color){
     if ($color == "rojo"){
         echo("Rojo: Frene <br>");
@@ -11,13 +13,14 @@ function semaforo_a($color){
         echo("Verde: Avance<br>");
     }
     else {
-        echo("Color invalido<br>");
+        echo("Estado desconocido<br>");
     }
 }
 echo("Probando solucion con if else: <br>");
 semaforo_a("rojo");
 semaforo_a("amarillo");
 semaforo_a("verde");
+semaforo_a("violeta");
 echo("<br>");
 
 // B: IF INLINE E IMPRIME DIRECTO
@@ -25,9 +28,9 @@ function semaforo_b($color){
     echo ($color == "verde") ? "Verde, avance <br>" : (($color == "amarillo") ? "Amarillo, precaucion <br>" : "Rojo, frene <br>");
 }
 echo("Probando solucion con if inline: <br>");
-semaforo_b("verde");
-semaforo_b("amarillo");
 semaforo_b("rojo");
+semaforo_b("amarillo");
+semaforo_b("verde");
 echo ("<br>");
 
 // C: SWITCH IMPRIME DIRECTO
@@ -43,11 +46,12 @@ function semaforo_c($color){
             echo ("Verde, avance <br>");
             break;
         default:
-            echo("Color invalido <br>");
+            echo("Estado desconocido<br>");
     }
 }
 echo("Probando solucion con switch: <br>");
-semaforo_c("verde");
-semaforo_c("amarillo");
 semaforo_c("rojo");
+semaforo_c("amarillo");
+semaforo_c("verde");
+semaforo_c("violeta");
 ?>

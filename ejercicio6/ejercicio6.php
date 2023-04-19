@@ -1,4 +1,5 @@
 <?php
+echo("<br> <h2>Ejercicio 6. Nombre Completo</h2>");
 class Persona{
     public $nombre;
     public $apellido;
@@ -9,15 +10,15 @@ class Persona{
         $this->apellido = $apellido;
     }
 
-    public function saludoFormal($nombre, $apellido, $horario){
+    public function saludoFormal($horario){
         if ($horario > 5 && $horario < 13){
-            return ("Buenos dias $nombre $apellido");
+            return ("Buenos dias . $this->nombre . $this->apellido");
         }
         elseif ($horario >= 13 && $horario <= 21){
-            return ("Buenas tardes $nombre $apellido");
+            return ("Buenas tardes . $this->nombre . $this->apellido");
         }
         else{
-            return ("Buenas noches $nombre $apellido");
+            return ("Buenas noches . $this->nombre . $this->apellido");
         }
     }
 
@@ -33,7 +34,9 @@ class Persona{
         }
     }
 }
-$persona = new Persona("Juan", "Perez");
-echo ($persona -> saludoInformal(11));
+$persona1 = new Persona("Juan", "Perez");
+$persona2 = new Persona("Alma", "Rodriguez");
+echo ($persona1 -> saludoInformal(11) . "<br>");
+echo ($persona2 -> saludoFormal(22));
 
 ?>
