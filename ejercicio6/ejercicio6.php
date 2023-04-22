@@ -1,6 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<br>
+<h2>Ejercicio 6. Nombre Completo</h2>
+<p> Cree una clase llamada Saludar, la misma tendrá un constructor que reciba nombre, apellido de una
+    persona.
+    Dicha clase debe implementar el método saludoFormal( horario ) el cual debe responder
+    concatenado al nombre un prefijo dependiendo del horario:
+    05hs a 13hs “Buenos días”
+    13hs a 21hs “Buenas tardes”
+    21hs a 05hs “Buenas noches” </p>
+<p>Dicha clase debe implementar también el método saludoInformal(horario) el cual debe responder
+    sin el apellido, iniciando con un “hola” por delante y al finalizar concatenar “que tengas un ...” saludo
+    perteneciente al horario.</p>
+
+<h3>Solucion:</h3>
+<form action='ejercicio6.php' method='post' enctype='multipart/form-data'>
+    <input type='text' placeholder='Ingrese su nombre' name='nombre'>
+    <br>
+    <br>
+    <input type='text' placeholder='Ingrese su apellido' name='apellido'>
+    <br>
+    <br>
+    <input type='text' placeholder='Ingrese el horario actual' name='hora'>
+    <br>
+    <br>
+    <label for='formal'>Saludo Formal</label>
+    <input type='radio' id='formal' name='saludo'>
+    <label for='informal'>Saludo Informal</label>
+    <input type='radio' id='informal' name='saludo'>
+    <br>
+    <br>
+    <input type='submit'>
+</form>
+</body>
+
 <?php
-echo("<br> <h2>Ejercicio 6. Nombre Completo</h2>");
 class Persona{
+
     public $nombre;
     public $apellido;
 
@@ -12,7 +56,7 @@ class Persona{
 
     public function saludoFormal($horario){
         if ($horario > 5 && $horario < 13){
-            return ("Buenos dias . $this->nombre . $this->apellido");
+            return ("Buenos dias . $this->nombre  . $this->apellido");
         }
         elseif ($horario >= 13 && $horario <= 21){
             return ("Buenas tardes . $this->nombre . $this->apellido");
@@ -34,9 +78,16 @@ class Persona{
         }
     }
 }
-$persona1 = new Persona("Juan", "Perez");
-$persona2 = new Persona("Alma", "Rodriguez");
-echo ($persona1 -> saludoInformal(11) . "<br>");
-echo ($persona2 -> saludoFormal(22));
+$nombre=$_POST["nombre"];
+$apellido=$_POST["apellido"];
+$hora=$_POST["hora"];
+$saludo=$_POST["saludo"];
+$persona = new Persona($nombre, $apellido);
 
+if($saludo=='formal')
+    echo ($persona -> saludoInformal($hora) . "<br>");
+elseif($saludo=='informal')
+    echo ($persona -> saludoFormal($hora) . "<br>");
+echo("<a href='../index.php'> Volver</a>");
 ?>
+</html>
