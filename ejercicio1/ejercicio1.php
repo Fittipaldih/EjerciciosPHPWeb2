@@ -8,7 +8,12 @@
     <title>Fittipaldi - Ejercicio 1</title>
 </head>
 <body>
-
+<header>
+    <?php
+    include_once("../header.php");
+    ?>
+</header>
+<main>
 <h2>Ejercicio 1</h2>
 <p>Cree una función llamada Semaforo, que recibe por parametro un cólor cómo texto (“rojo”
     “amarillo”,”verde”). Dicha función devolverá el estado que corresponde: “frene”, “precaución”,
@@ -25,38 +30,28 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $color = $_POST["color"];
-// A: IF ELSE y con RETURN
+// A: IF ELSE
     function semaforo_a($color)
     {
-        if ($color == "rojo") {
+        if ("rojo" == strtolower($color)) {
             echo("Rojo: Frene <br>");
-        } elseif ($color == "amarillo") {
+        } elseif ("amarillo" == strtolower($color)) {
             echo("Amarillo: Precaucion<br>");
-        } elseif ($color == "verde") {
+        } elseif ("verde" == strtolower($color)) {
             echo("Verde: Avance<br>");
         } else {
             echo("Estado desconocido<br>");
         }
     }
-
-    echo("Probando solucion con if else: <br>");
-    semaforo_a($color);
-    echo("<br>");
-
-// B: IF INLINE E IMPRIME DIRECTO
+// B: IF INLINE
     function semaforo_b($color)
     {
-        echo ($color == "verde" ? "Verde, avance <br>" : $color == "amarillo") ? "Amarillo, precaucion <br>" : ($color == "rojo" ? "Rojo, frene <br>" : "Estado desconocido");
+        echo ("verde" === strtolower($color) ? "Verde, avance <br>" : ("amarillo" === strtolower($color) ? "Amarillo, precaucion <br>" : ("rojo" === strtolower($color) ? "Rojo, frene <br>" : "Estado desconocido")));
     }
-
-    echo("Probando solucion con if inline: <br>");
-    semaforo_b($color);
-    echo("<br>");
-
-// C: SWITCH IMPRIME DIRECTO
+    // C: SWITCH
     function semaforo_c($color)
     {
-        switch ($color) {
+        switch (strtolower($color)) {
             case "rojo":
                 echo("Rojo, frene <br>");
                 break;
@@ -71,10 +66,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
+    echo("Probando solucion con if else: <br>");
+    semaforo_a($color);
+    echo("<br>");
+
+    echo("Probando solucion con if inline: <br>");
+    semaforo_b($color);
+    echo("<br>");
+
     echo("Probando solucion con switch: <br>");
     semaforo_c($color);
 }
 ?>
 <a href="../index.php">Volver</a>
+</main>
 </body>
 </html>

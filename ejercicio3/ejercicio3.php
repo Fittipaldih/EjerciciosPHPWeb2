@@ -8,7 +8,12 @@
     <title>Fittipaldi - Ejercicio 3</title>
 </head>
 <body>
-
+<header>
+    <?php
+    include_once("../header.php");
+    ?>
+</header>
+<main>
 <h2>Ejercicio 3</h2>
 <p>Cree una función concatenar(texto1, texto2) que reciba dos textos como parámetro y devuelva
     ambos textos concatenados como uno solo.</p>
@@ -33,5 +38,6 @@ if(isset($_GET['texto1']) && isset($_GET['texto2'])) {
 ?>
 <br>
 <a href="../index.php">VOLVER</a>
+</main>
 </body>
 </html>

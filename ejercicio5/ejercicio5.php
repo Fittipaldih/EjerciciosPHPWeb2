@@ -8,6 +8,12 @@
     <title>Fittipaldi - Ejercicio 5</title>
 </head>
 <body>
+<header>
+    <?php
+    include_once("../header.php");
+    ?>
+</header>
+<main>
 <h2>Ejercicio 5</h2>
 <p>Cree una función sumatoria que reciba un vector cómo parámetro, y devuelva la suma de todos sus
     valores. </p>
@@ -49,5 +55,6 @@ function sumatoria_c($array){
 echo(sumatoria_c($vector) . "<br>");
 echo("<a href='../index.php'> Volver</a>");
 ?>
+</main>
 </body>
 </html>

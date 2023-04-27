@@ -8,7 +8,12 @@
     <title>Fittipaldi - Ejercicio 2</title>
 </head>
 <body>
-
+<header>
+    <?php
+    include_once("../header.php");
+    ?>
+</header>
+<main>
 <h2>Ejercicio 2</h2>
 <p>Cree una función llamada binomioCuadradoPerfecto que realice la ecuación de dicha problemática:
     recibe dos parámetros y devuelve el cuadrado de la suma de ambos (a+b)^2 </p>
@@ -30,26 +35,32 @@
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 $num1 = $_POST["numero1"];
 $num2 = $_POST["numero2"];
+if (is_numeric($num1) && is_numeric($num2)) {
+    echo("<br> Solucion 1(con pow) <br>");
+    function binomioCuadradoPerfecto_a($a, $b)
+    {
+        return pow(($a + $b), 2);
+    }
 
-echo("<br> Solucion 1(con pow) <br>");
- function binomioCuadradoPerfecto_a($a, $b){
-     return pow(($a + $b), 2);
- }
- echo(binomioCuadradoPerfecto_a($num1,$num2) . "<br>");
-echo("<br> Solucion 2 (**) <br>");
- function binomioCuadradoPerfecto_a2($a, $b){
-     $suma = $a + $b;
-     return $suma ** 2;
- }
-echo(binomioCuadradoPerfecto_a2($num1,$num2). "<br>");
-echo("<br> Solucion 3 (a^2+2ab+b^2) <br>");
- function binomioCuadradoPerfecto_b($a, $b){
-        return pow($a,2) + 2 * $a * $b + pow($b,2);
- }
-echo(binomioCuadradoPerfecto_b($num1,$num2). "<br>");
- 
+    echo(binomioCuadradoPerfecto_a($num1, $num2) . "<br>");
+    echo("<br> Solucion 2 (**) <br>");
+    function binomioCuadradoPerfecto_a2($a, $b)
+    {
+        $suma = $a + $b;
+        return $suma ** 2;
+    }
+
+    echo(binomioCuadradoPerfecto_a2($num1, $num2) . "<br>");
+    echo("<br> Solucion 3 (a^2+2ab+b^2) <br>");
+    function binomioCuadradoPerfecto_b($a, $b)
+    {
+        return pow($a, 2) + 2 * $a * $b + pow($b, 2);
+    }
+    echo(binomioCuadradoPerfecto_b($num1, $num2) . "<br>");
+}
 }
 ?>
 <a href="../index.php">Volver</a>
+</main>
 </body>
 </html>

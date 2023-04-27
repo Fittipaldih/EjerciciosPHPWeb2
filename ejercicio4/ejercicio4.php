@@ -8,8 +8,13 @@
     <title>Fittipaldi - Ejercicio 4</title>
 </head>
 <body>
-
-<br> <h2>Ejercicio 4</h2>
+<header>
+    <?php
+    include_once("../header.php");
+    ?>
+</header>
+<main>
+<h2>Ejercicio 4</h2>
 <p>Cree una función llamada incrementar, que reciba una variable y sin devolver nada como retorno de
     la función, el valor del parámetro haya sido incrementado en 1
     (Ver pasaje de parámetros por referencia)</p>
@@ -22,18 +27,23 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $a = $_POST["numerito"];
-    function incrementar(&$a)
-    {
-        if (isset($a)) {
+    if (isset($a) && is_numeric($a)) {
+        $a = intval($a);
+        function incrementar(&$a)
+            // La notación "&" antes del parámetro de una función indica que se trata de un paso por referencia en lugar de un paso por valor. Esto significa que cuando se llama a la función, se está pasando una referencia a la variable original en lugar de una copia, por lo que cualquier cambio realizado en la variable dentro de la función afectará a la variable original fuera de la función.
+        {
             $a = $a + 1;
         }
+        echo("El numero antes de llamar la funcion es: <br> $a <br>");
+        incrementar($a);
+        echo("Despues de llamar a la funcion es: <br> $a <br>");
+    } else {
+        echo("Debe ingresar un número válido.");
     }
-
-    echo("El numero antes de llamar la funcion es: <br> $a <br>");
-    incrementar($a);
-    echo("Despues de llamar a la funcion es: <br> $a <br>");
-    echo("<a href='../index.php'> Volver");
 }
+echo("<a href='../index.php'> Volver");
+
 ?>
+</main>
 </body>
 </html>
