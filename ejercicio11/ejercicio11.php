@@ -14,10 +14,24 @@
     ?>
 </header>
 <main>
-    <h2>Ejercicio 11</h2>
+    <h2>Ejercicio 11: Lanzar dados</h2>
     <p>
-
+        Realizar una web que permita indicar la cantidad de dados a lanzar (mediante input de tipo option) y
+        al tocar un botón “lanzar dados” pase a una segunda pantalla donde muestre los dados lanzados
+        como imagen y la suma de sus valores como puntaje obtenido.
     </p>
+    <form action="dados.php" method="post" enctype="multipart/form-data">
+        <label for="cantidadDados">Cantidad de dados:</label>
+        <select name="cantidadDados" id="cantidadDados">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+        </select>
+        <input type="submit" value="Lanzar dados">
+    </form>
 </main>
 </body>
 </html>

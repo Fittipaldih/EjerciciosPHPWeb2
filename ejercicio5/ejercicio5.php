@@ -14,7 +14,7 @@
     ?>
 </header>
 <main>
-<h2>Ejercicio 5</h2>
+<h2>Ejercicio 5: Sumatoria</h2>
 <p>Cree una función sumatoria que reciba un vector cómo parámetro, y devuelva la suma de todos sus
     valores. </p>
 <p> A) función sumatoria_a( $array ): Resuelva la solución utilizando la estructura de control for</p>

@@ -14,7 +14,7 @@
     ?>
 </header>
 <main>
-    <h2>Ejercicio 9</h2>
+    <h2>Ejercicio 9: Insta-gramo</h2>
     <p>
         Realizar una web que muestre todas las imágenes que contiene en la carpeta “/imagenes” con su
         respectivo nombre de archivo como pié de imagen. Al final de dicha web debe haber un formulario

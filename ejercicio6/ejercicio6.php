@@ -16,7 +16,7 @@
 <main>
 
     <br>
-    <h2>Ejercicio 6. Nombre Completo</h2>
+    <h2>Ejercicio 6: Nombre Completo</h2>
     <p> Cree una clase llamada Saludar, la misma tendrá un constructor que reciba nombre, apellido de una
         persona.
         Dicha clase debe implementar el método saludoFormal( horario ) el cual debe responder

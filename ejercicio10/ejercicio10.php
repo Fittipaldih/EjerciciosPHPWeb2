@@ -14,7 +14,7 @@
     ?>
 </header>
 <main>
-    <h2>Ejercicio 10</h2>
+    <h2>Ejercicio 10: Insta-reciclado</h2>
     <p>
         Reutilizando el ejercicio anterior, realizar una web que liste todos los nombres de imagenes que
         contiene en la carpeta /imagenes cómo link, que al hacer clic, lleve a una segunda pantalla donde

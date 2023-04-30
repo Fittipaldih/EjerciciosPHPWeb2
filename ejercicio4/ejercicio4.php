@@ -14,7 +14,7 @@
     ?>
 </header>
 <main>
-<h2>Ejercicio 4</h2>
+<h2>Ejercicio 4: Incrementar</h2>
 <p>Cree una función llamada incrementar, que reciba una variable y sin devolver nada como retorno de
     la función, el valor del parámetro haya sido incrementado en 1
     (Ver pasaje de parámetros por referencia)</p>

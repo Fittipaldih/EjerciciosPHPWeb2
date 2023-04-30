@@ -14,7 +14,7 @@
     ?>
 </header>
 <main>
-<h2>Ejercicio 3</h2>
+<h2>Ejercicio 3: Concatenar textos</h2>
 <p>Cree una función concatenar(texto1, texto2) que reciba dos textos como parámetro y devuelva
     ambos textos concatenados como uno solo.</p>
 <form action="ejercicio3.php" method="get">

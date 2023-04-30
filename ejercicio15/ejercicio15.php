@@ -14,9 +14,61 @@
     ?>
 </header>
 <main>
-    <h2>Ejercicio 15</h2>
+    <h2>Ejercicio 15: Buscando una palabra en un pajar, más bien en un String</h2>
     <p>
+        Crear una función que reciba una palabra a buscar y un texto, y devuelva cuantas ocurrencias hubo
+        de la misma. Recorrer el texto String caracter a caracter sin utilizar funciones de String, la firma de la
+        función será similar a: buscar(clave, texto)
+    </p>
+    <?php
+    function buscar($buscada, $texto) {
+        $repetido = 0;
+        $longitudPalabra = strlen($buscada);
+        $longitudTexto = strlen($texto);
+        // Recorrer el texto caracter a caracter
+        for ($i = 0; $i < $longitudTexto; $i++) {
+            // Verificar si se encontró la primer letra de la palabra buscada
+            if ($texto[$i] == $buscada[0]) {
+                $encontrado = true;
+                // Comprobar si los caracteres siguientes también coinciden con la clave
+                for ($j = 1; $j < $longitudPalabra; $j++) {
+                    if ($texto[$i + $j] != $buscada[$j]) {
+                        $encontrado = false;
+                        break;
+                    }
+                }
+                if ($encontrado) {
+                    $repetido++;
+                }
+            }
+        }
+        return $repetido;
+    }
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $palabra = $_POST['palabra'];
+        $texto = $_POST['texto'];
+        $resultado = buscar($palabra, $texto);
+    } else {
+        $palabra = '';
+        $texto = '';
+        $resultado = 0;
+    }
+    ?>
+    <form method="POST" action="ejercicio15.php">
+        <label for="texto">Texto:</label>
+        <textarea id="texto" name="texto" placeholder="Ingrese aqui el texto..."></textarea><br><br>
 
+        <label for="palabra">Palabra a buscar:</label>
+        <input type="text" id="palabra" name="palabra"><br><br>
+
+        <button type="submit">Buscar</button>
+    </form>
+
+    <h3>Resultado:</h3>
+    <p>
+        <?php
+        echo "Se repite la palabra $palabra en el texto $resultado cantidad de veces"
+        ?>
     </p>
 </main>
 </body>

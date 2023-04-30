@@ -14,7 +14,7 @@
     ?>
 </header>
 <main>
-<h2>Ejercicio 2</h2>
+<h2>Ejercicio 2: Binomio cuadrado perfecto</h2>
 <p>Cree una función llamada binomioCuadradoPerfecto que realice la ecuación de dicha problemática:
     recibe dos parámetros y devuelve el cuadrado de la suma de ambos (a+b)^2 </p>
 <p>A) binomioCuadradoPerfecto_a($a, $b): Resuelva la solución utilizando la función de

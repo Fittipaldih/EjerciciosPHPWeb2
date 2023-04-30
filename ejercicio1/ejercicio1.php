@@ -14,7 +14,7 @@
     ?>
 </header>
 <main>
-<h2>Ejercicio 1</h2>
+<h2>Ejercicio 1: Semàforo</h2>
 <p>Cree una función llamada Semaforo, que recibe por parametro un cólor cómo texto (“rojo”
     “amarillo”,”verde”). Dicha función devolverá el estado que corresponde: “frene”, “precaución”,
     “avance” o “estado desconocido” ante un caso no esperado.</p>
