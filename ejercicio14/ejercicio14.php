@@ -6,6 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Fittipaldi - Ejercicio 14</title>
+    <link rel="stylesheet" href="../estilos/estilos.css">
 </head>
 <body>
 <header>
@@ -27,9 +28,14 @@
     </p>
     <form action="matriz.php" method="post">
         <label for="dimension">Dimensión de la matriz:</label>
-        <input type="number" name="dimension" id="dimension" max="6" required >
+        <input type="number" name="dimension" id="dimension" max="6" required placeholder="Ingrese la dimension...">
         <input type="submit" value="Crear Matriz">
     </form>
 </main>
+<footer>
+    <?php
+    include_once("../footer.php");
+    ?>
+</footer>
 </body>
 </html>

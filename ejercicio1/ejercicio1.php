@@ -6,6 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Fittipaldi - Ejercicio 1</title>
+    <link rel="stylesheet" href="../estilos/estilos.css">
 </head>
 <body>
 <header>
@@ -23,10 +24,9 @@
 <p>C) Función semaforo_c (color): Resuelva la solución utilizando switch. </p>
 <form action="ejercicio1.php" method="post" enctype="multipart/form-data">
     <label for="color">Ingrese un color: </label>
-    <input type="text" id="color" name="color">
+    <input type="text" id="color" name="color" placeholder="Ingrese el color...">
     <input type="submit">
 </form>
-<hr>
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $color = $_POST["color"];
@@ -78,7 +78,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     semaforo_c($color);
 }
 ?>
-<a href="../index.php">Volver</a>
 </main>
+<footer>
+    <?php
+    include_once("../footer.php");
+    ?>
+</footer>
 </body>
 </html>

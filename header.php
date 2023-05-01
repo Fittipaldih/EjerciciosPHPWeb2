@@ -16,5 +16,3 @@
 <a href="/hernanFittipaldi/ejercicio16/ejercicio16.php">Ejercicio 16</a>
 <a href="/hernanFittipaldi/ejercicio17/ejercicio17.php">Ejercicio 17</a>
 <a href="/hernanFittipaldi/ejercicio18/ejercicio18.php">Ejercicio 18</a>
-<a href="/hernanFittipaldi/ejercicio19/ejercicio19.php">Ejercicio 19</a>
-<a href="/hernanFittipaldi/ejercicio20/ejercicio20.php">Ejercicio 20</a>

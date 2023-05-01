@@ -6,6 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Fittipaldi - Ejercicio 6</title>
+    <link rel="stylesheet" href="../estilos/estilos.css">
 </head>
 <body>
 <header>
@@ -47,54 +48,57 @@
         <br>
         <input type='submit'>
     </form>
+
+    <?php
+    class Persona{
+        public $nombre;
+        public $apellido;
+        public function __construct($nombre, $apellido)
+        {
+            $this->nombre = $nombre;
+            $this->apellido = $apellido;
+        }
+        public function saludoFormal($horario){
+            if ($horario >= 5 && $horario < 13){
+                return ("Buenos dias " . $this->nombre . " " . $this->apellido);
+            }
+            elseif ($horario >= 13 && $horario <= 21){
+                return ("Buenas tardes " . $this->nombre . " " . $this->apellido);
+            }
+            elseif ($horario > 21 && $horario <5){
+                return ("Buenas noches " . $this->nombre . " " . $this->apellido);
+            }
+        }
+        public function saludoInformal($horario){
+            if ($horario >= 5 && $horario < 13){
+                return ("Hola " . $this->nombre . " que tengas un buen dia!");
+            }
+            elseif ($horario >= 13 && $horario <= 21){
+                return ("Hola " . $this->nombre . " que tengas buenas tardes!");
+            }
+            elseif ($horario > 21 && $horario <5){
+                return ("Hola " . $this->nombre . " que tengas buenas noches!");
+            }
+        }
+    }
+    if(isset($_POST["nombre"]) && isset($_POST["apellido"])  && isset($_POST["saludo"])) {
+        $nombre = $_POST["nombre"];
+        $apellido = $_POST["apellido"];
+        $hora = $_POST["hora"];
+        $saludo = $_POST["saludo"];
+        $persona = new Persona($nombre, $apellido);
+
+        if ($saludo == 'formal')
+            echo("<p>" . $persona->saludoFormal($hora) . "</p><br>");
+        elseif ($saludo == 'informal')
+            echo("<p>" . $persona->saludoInformal($hora) . "</p><br>");
+    }
+    ?>
 </main>
+<footer>
+    <?php
+    include_once("../footer.php");
+    ?>
+</footer>
 </body>
-
-<?php
-class Persona{
-    public $nombre;
-    public $apellido;
-    public function __construct($nombre, $apellido)
-    {
-        $this->nombre = $nombre;
-        $this->apellido = $apellido;
-    }
-    public function saludoFormal($horario){
-        if ($horario >= 5 && $horario < 13){
-            return ("Buenos dias " . $this->nombre . " " . $this->apellido);
-        }
-        elseif ($horario >= 13 && $horario <= 21){
-            return ("Buenas tardes " . $this->nombre . " " . $this->apellido);
-        }
-        elseif ($horario > 21 && $horario <5){
-            return ("Buenas noches " . $this->nombre . " " . $this->apellido);
-        }
-    }
-    public function saludoInformal($horario){
-        if ($horario >= 5 && $horario < 13){
-            return ("Hola " . $this->nombre . " que tengas un buen dia!");
-        }
-        elseif ($horario >= 13 && $horario <= 21){
-            return ("Hola " . $this->nombre . " que tengas buenas tardes!");
-        }
-        elseif ($horario > 21 && $horario <5){
-            return ("Hola " . $this->nombre . " que tengas buenas noches!");
-        }
-    }
-}
-if(isset($_POST["nombre"]) && isset($_POST["apellido"])  && isset($_POST["saludo"])) {
-    $nombre = $_POST["nombre"];
-    $apellido = $_POST["apellido"];
-    $hora = $_POST["hora"];
-    $saludo = $_POST["saludo"];
-    $persona = new Persona($nombre, $apellido);
-
-    if ($saludo == 'formal')
-        echo($persona->saludoFormal($hora) . "<br>");
-    elseif ($saludo == 'informal')
-        echo($persona->saludoInformal($hora) . "<br>");
-
-}
-echo("<a href='../index.php'> Volver</a>");
-?>
 

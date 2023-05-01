@@ -6,6 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Fittipaldi - Ejercicio 14</title>
+    <link rel="stylesheet" href="../estilos/estilos.css">
 </head>
 <body>
 <header>
@@ -54,8 +55,11 @@
         echo "Suma de todos los valores: $suma";
     }
     ?>
-    <br>
-    <a href="ejercicio14.php">Volver</a>
 </main>
+<footer>
+    <?php
+    include_once("../footer.php");
+    ?>
+</footer>
 </body>
 </html>

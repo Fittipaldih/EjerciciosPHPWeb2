@@ -7,7 +7,9 @@ if(isset($_FILES['archivo'])) {
         header('Location: ejercicio9.php');
         exit();
     } else {
-        echo "Error al subir archivo";
+        include_once("../header.php");
+        echo "<br> <br>Error al subir archivo";
+        include_once("../footer.php");
     }
 }
 ?>

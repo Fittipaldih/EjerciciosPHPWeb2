@@ -3,6 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <title>Fittipaldi H - Ejercicios WebII</title>
+    <link rel="stylesheet" href="estilos/estilos.css">
 </head>
 <body>
 <header>

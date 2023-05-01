@@ -6,6 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Fittipaldi - Ejercicio 9</title>
+    <link rel="stylesheet" href="../estilos/estilos.css">
 </head>
 <body>
 <header>
@@ -40,9 +41,14 @@
         <label for="archivo">Selecciona una imagen:</label>
         <input type="file" name="archivo" id="archivo"><br><br>
         <label for="nombre">Nombre de la imagen:</label>
-        <input type="text" name="nombre" id="nombre"><br><br>
+        <input type="text" name="nombre" id="nombre" placeholder="Ingrese el nombre..."><br><br>
         <input type="submit" value="Publicar">
     </form>
 </main>
+<footer>
+    <?php
+    include_once("../footer.php");
+    ?>
+</footer>
 </body>
 </html>

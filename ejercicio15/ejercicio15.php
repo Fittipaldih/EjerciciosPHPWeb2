@@ -6,6 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Fittipaldi - Ejercicio 15</title>
+    <link rel="stylesheet" href="../estilos/estilos.css">
 </head>
 <body>
 <header>
@@ -56,12 +57,12 @@
     ?>
     <form method="POST" action="ejercicio15.php">
         <label for="texto">Texto:</label>
-        <textarea id="texto" name="texto" placeholder="Ingrese aqui el texto..."></textarea><br><br>
+        <textarea required id="texto" name="texto" placeholder="Ingrese aqui el texto..."></textarea><br><br>
 
         <label for="palabra">Palabra a buscar:</label>
-        <input type="text" id="palabra" name="palabra"><br><br>
+        <input required type="text" id="palabra" name="palabra" placeholder="Ingrese la palabra..." ><br><br>
 
-        <button type="submit">Buscar</button>
+        <input type="submit"></input>
     </form>
 
     <h3>Resultado:</h3>
@@ -71,5 +72,10 @@
         ?>
     </p>
 </main>
+<footer>
+    <?php
+    include_once("../footer.php");
+    ?>
+</footer>
 </body>
 </html>

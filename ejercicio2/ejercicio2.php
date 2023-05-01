@@ -6,6 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Fittipaldi - Ejercicio 2</title>
+    <link rel="stylesheet" href="../estilos/estilos.css">
 </head>
 <body>
 <header>
@@ -23,14 +24,13 @@
     desarrollada del binomio: a^2 + 2*a*b + b^2</p>
 <form action="ejercicio2.php" method="post" enctype="multipart/form-data" >
     <label for="1">Ingrese numero 1</label>
-    <input type="number" name="numero1" id="1">
+    <input type="number" name="numero1" id="1" placeholder="Ingrese el numero 1...">
     <br>
     <label for="2">Ingrese numero 2</label>
-    <input type="number" name="numero2" id="2">
+    <input type="number" name="numero2" id="2" placeholder="Ingrese el numero 2...">
     <br>
     <input type="submit">
 </form>
-<hr>
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 $num1 = $_POST["numero1"];
@@ -60,7 +60,11 @@ if (is_numeric($num1) && is_numeric($num2)) {
 }
 }
 ?>
-<a href="../index.php">Volver</a>
 </main>
+<footer>
+    <?php
+    include_once("../footer.php");
+    ?>
+</footer>
 </body>
 </html>

@@ -6,6 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Fittipaldi - Ejercicio 4</title>
+    <link rel="stylesheet" href="../estilos/estilos.css">
 </head>
 <body>
 <header>
@@ -19,11 +20,9 @@
     la función, el valor del parámetro haya sido incrementado en 1
     (Ver pasaje de parámetros por referencia)</p>
 <form action="ejercicio4.php" method="post">
-    <input type="number" name="numerito">
+    <input type="number" name="numerito" placeholder="Ingrese el numero...">
     <input type="submit" value="Incrementar (+1)">
 </form>
-<hr>
-
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $a = $_POST["numerito"];
@@ -41,9 +40,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo("Debe ingresar un número válido.");
     }
 }
-echo("<a href='../index.php'> Volver");
-
 ?>
 </main>
+<footer>
+    <?php
+    include_once("../footer.php");
+    ?>
+</footer>
 </body>
 </html>
